@@ -3,6 +3,8 @@ import DropDownCategoriesComponent from "./DropDownComponent";
 import { searchProductsQuery as searchProductsByQuery } from "./ProductsList";
 import ProductsListDisplayCompononent from "./ProductsListDisplayComponent";
 
+import './ProductsList.css'
+
 function ProductsListComponent() {
     
     const [nameQuery, setNameQuery] = useState('')
@@ -13,9 +15,12 @@ function ProductsListComponent() {
     }
 
     return (
-        <div>
-            <input placeholder="Buscar por nombre..." onChange={handleNameQuery}/>
-            <DropDownCategoriesComponent changeCategory={setCategoryQuery} />
+        <div className="productsListContainer">
+            <div className="filterContainer">
+                <input className="searchInput" placeholder="Buscar por nombre..." onChange={handleNameQuery}/>
+                <DropDownCategoriesComponent changeCategory={setCategoryQuery} />
+            </div>
+
             <ProductsListDisplayCompononent productList={searchProductsByQuery({name: nameQuery, category: categoryQuery})}/>
         </div>
     )
