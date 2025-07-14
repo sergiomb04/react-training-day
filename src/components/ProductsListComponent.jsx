@@ -10,7 +10,6 @@ function ProductsListComponent() {
 
     const handleNameQuery = (event) => {
         setNameQuery(event.target.value)
-        console.log(event.target.value)
     }
 
     return (
