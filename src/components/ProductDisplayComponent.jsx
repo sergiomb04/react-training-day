@@ -5,7 +5,7 @@ function ProductDisplayComponent({ id }) {
     const product = productsList.find(product => product.id === id)
     
     return (
-        <div className="productComponent">
+        <div key={id} className="productComponent">
             <div className="imageContainer">
                 <img src="/img/product.png" className="productImage"></img>
             </div>

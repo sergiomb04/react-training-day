@@ -14,7 +14,7 @@ export default function DropDownCategoriesComponent({ changeCategory }) {
             <option value="">Selecciona una categoría</option>
 
             {uniqueCategories.map(category => {
-                return <option value={category}>{category}</option>
+                return <option key={category} value={category}>{category}</option>
             })}
         </select>
     )
